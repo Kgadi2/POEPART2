@@ -39,7 +39,32 @@ public class POEPAR1 {
                     login = new Login(username, password, firstName, lastName);
                     String registrationResult = login.registerUser();
                     System.out.println(registrationResult);
-                    break; 
+                    break;
+                    
+                case 2:
+                    if (login == null) {
+                        System.out.println("Please register first.");
+                        break;
+                    }
+                    System.out.print("Enter username: ");
+                    String loginUsername = sc.nextLine();
+                    System.out.print("Enter password: ");
+                    String loginPassword = sc.nextLine();
+
+                    String loginResult = login.returnLoginStatus(loginUsername, loginPassword);
+                    System.out.println(loginResult);
+                    break;
+
+                case 3:
+                    System.out.println("Goodbye!");
+                    System.exit(0);
+
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
+}
         
         
     
