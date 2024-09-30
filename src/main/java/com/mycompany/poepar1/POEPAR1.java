@@ -20,10 +20,12 @@ public class POEPAR1 {
         System.out.print("Please enter Username");
         Username=sc.next();
         System.out.print("Please enter First name");
-        Username=sc.next();
+        firstName=sc.next();
         System.out.print("Please enter Last Name");
-        Username=sc.next();
+        lastName=sc.next();
         System.out.print("Please enter Password");
-        Username=sc.next();
+        Password=sc.next();
+        
+        
     
 
