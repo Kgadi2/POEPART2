@@ -3,7 +3,8 @@
  */
 
 package com.mycompany.poepar1;
-
+import java.util.Scanner;
+import java.util.regex.Pattern;
 /**
  *
  * @author RC_Student_lab
@@ -11,6 +12,12 @@ package com.mycompany.poepar1;
 public class POEPAR1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
-}
+        
+        //Declarations
+        String Username, firstName, lastName, Password;
+        Scanner sc = new Scanner(System.in);
+        //prompt the user
+        
+
+    
+
