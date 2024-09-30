@@ -25,7 +25,16 @@ public class POEPAR1 {
         lastName=sc.next();
         System.out.print("Please enter Password");
         Password=sc.next();
+        //Conditions and requirements
         
+        if (Username.contains("_")&& Username.length()<5){
+            System.out.println("Username is not correctly formatted please ensure your username containds an underscore is no more than 5 characters in lenght");
+           
+
+        }
+        
+        
+    
         
     
 
