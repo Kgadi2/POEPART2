@@ -30,7 +30,7 @@ public class Login {
                password.matches(".*\\d.*") &&
                password.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>/?].*");
     }
-
+    
     public String registerUser() {
         if (!checkUserName()) {
             return "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
@@ -44,7 +44,7 @@ public class Login {
     public boolean loginUser(String enteredUsername, String enteredPassword) {
         return username.equals(enteredUsername) && password.equals(enteredPassword);
     }
-
+    //Method to verify login
     public String returnLoginStatus(String enteredUsername, String enteredPassword) {
         if (loginUser(enteredUsername, enteredPassword)) {
             return "Welcome " + firstName + ", " + lastName + " it is great to see you again.";
