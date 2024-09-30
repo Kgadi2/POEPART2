@@ -14,24 +14,32 @@ public class POEPAR1 {
     public static void main(String[] args) {
         
         //Declarations
-        String Username, firstName, lastName, Password;
-        Scanner sc = new Scanner(System.in);
-        //prompt the user
-        System.out.print("Please enter Username");
-        Username=sc.next();
-        System.out.print("Please enter First name");
-        firstName=sc.next();
-        System.out.print("Please enter Last Name");
-        lastName=sc.next();
-        System.out.print("Please enter Password");
-        Password=sc.next();
-        //Conditions and requirements
-        
-        if (Username.contains("_")&& Username.length()<5){
-            System.out.println("Username is not correctly formatted please ensure your username containds an underscore is no more than 5 characters in lenght");
-           
+         Scanner sc = new Scanner(System.in);
+        Login login = null;
 
-        }
+        while (true) {
+            System.out.println("\n1. Register");
+            System.out.println("2. Login");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option: ");
+            int choice = sc.nextInt();
+            sc.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter username: ");
+                    String username = sc.nextLine();
+                    System.out.print("Enter password: ");
+                    String password = sc.nextLine();
+                    System.out.print("Enter first name: ");
+                    String firstName = sc.nextLine();
+                    System.out.print("Enter last name: ");
+                    String lastName = sc.nextLine();
+
+                    login = new Login(username, password, firstName, lastName);
+                    String registrationResult = login.registerUser();
+                    System.out.println(registrationResult);
+                    break; 
         
         
     
