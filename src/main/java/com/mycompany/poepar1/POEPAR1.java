@@ -17,7 +17,13 @@ public class POEPAR1 {
         String Username, firstName, lastName, Password;
         Scanner sc = new Scanner(System.in);
         //prompt the user
-        
-
+        System.out.print("Please enter Username");
+        Username=sc.next();
+        System.out.print("Please enter First name");
+        Username=sc.next();
+        System.out.print("Please enter Last Name");
+        Username=sc.next();
+        System.out.print("Please enter Password");
+        Username=sc.next();
     
 
