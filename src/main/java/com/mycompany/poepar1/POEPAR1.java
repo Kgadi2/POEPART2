@@ -60,5 +60,75 @@ public class POEPAR1 {
         }
     }
 
+    private static void addTasks() {
+        System.out.print("How many tasks do you want to add? ");
+        int numTasks = sc.nextInt();
+        sc.nextLine(); // Consume newline
+
+        for (int i = 0; i < numTasks; i++) {
+            System.out.println("\nEntering details for Task " + (i + 1));
+
+            System.out.print("Task Name: ");
+            String taskName = sc.nextLine();
+
+            String taskDescription;
+            while (true) {
+                System.out.print("Task Description (max 50 characters): ");
+                taskDescription = sc.nextLine();
+                if (taskDescription.length() <= 50) {
+                    System.out.println("Task successfully captured");
+                    break;
+                } else {
+                    System.out.println("Please enter a task description of less than 50 characters");
+                }
+            }
+
+            System.out.print("Developer Details (First and Last Name): ");
+            String developerDetails = sc.nextLine();
+
+            System.out.print("Task Duration (in hours): ");
+            int taskDuration = sc.nextInt();
+            sc.nextLine(); // Consume newline
+
+            System.out.println("Task Status:");
+            System.out.println("1) To Do");
+            System.out.println("2) Done");
+            System.out.println("3) Doing");
+            System.out.print("Choose a status: ");
+            int statusChoice = sc.nextInt();
+            sc.nextLine(); // Consume newline
+
+            String taskStatus;
+            switch (statusChoice) {
+                case 1:
+                    taskStatus = "To Do";
+                    break;
+                case 2:
+                    taskStatus = "Done";
+                    break;
+                case 3:
+                    taskStatus = "Doing";
+                    break;
+                default:
+                    taskStatus = "To Do"; // Default status
+            }
+
+            Task task = new Task(taskName, i, taskDescription, developerDetails, taskDuration, taskStatus);
+            tasks.add(task);
+            totalHours += taskDuration;
+
+            System.out.println("\nTask Details:");
+            System.out.println(task.printTaskDetails());
+        }
+
+        System.out.println("\nTotal hours for all tasks: " + totalHours);
+    }
+
+    public static int returnTotalHours() {
+        return totalHours;
+    }
+}
+    
+        
     
 
