@@ -12,6 +12,7 @@ public class POEPAR1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Login login = new Login();
+        Part3Task second = new Part3Task();
         
         System.out.println("1. Login");
         System.out.println("2. Exit");
@@ -70,7 +71,7 @@ public class POEPAR1 {
 
         // Main task management loop
         while (true) {
-            String choiceStr = JOptionPane.showInputDialog("1) Add tasks\n2) Show report\n3) Quit\nChoose an option:");
+            String choiceStr = JOptionPane.showInputDialog("1) Add tasks\n2) Show report\n3) Search Task Name \n4) Find Longest Task\n5) Search Developer\n6) Completed Tasks\n7) Delete Task\n8) Quit\n) \nChoose an option:");
             int secondChoice;
 
             try {
@@ -85,9 +86,26 @@ public class POEPAR1 {
                     addTasks(dialog);
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(dialog, "Coming Soon");
+                    second.displayFullReport();
                     break;
                 case 3:
+                    String input = JOptionPane.showInputDialog("Enter task name to search");
+                    second.searchTaskByName(input);
+                case 4:
+                    second.findLongestTask();
+                    break;
+                case 5:
+                    String developername = JOptionPane.showInputDialog("Enter developer name to search");
+                    second.searchTasksByDeveloper(developername);
+                    break;
+                case 6:
+                    second.displayCompletedTasks();
+                    break;
+                case 7:
+                    String taskdelete = JOptionPane.showInputDialog("Enter task to delete");
+                    second.deleteTask(taskdelete);
+                    break;
+                case 8:
                     JOptionPane.showMessageDialog(dialog, "Goodbye!");
                     System.exit(0);
                 default:

@@ -91,7 +91,7 @@ public class Task {
                 default:
                     taskStatus = "To Do"; // Default status
             }
-
+            
             Task task = new Task(taskName, i, taskDescription, developerDetails, taskDuration, taskStatus);
             tasks.add(task);
             totalHours += taskDuration;
